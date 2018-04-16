@@ -1,4 +1,12 @@
 <!DOCTYPE>
 <script type="text/javascript">
-	
+	function computerPlay(){
+		let randomMove = Math.floor(Math.random()*100);
+		moveSelect = (randomMove <=33) ? "Rock":(randomMove >=34 && randomMove<=65) ? "Paper": "Scissors";
+		return moveSelect;
+	}
+
+	function game(){
+		
+	}
 </script>
