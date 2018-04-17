@@ -2,11 +2,25 @@
 <script type="text/javascript">
 	function computerPlay(){
 		let randomMove = Math.floor(Math.random()*100);
-		moveSelect = (randomMove <=33) ? "Rock":(randomMove >=34 && randomMove<=65) ? "Paper": "Scissors";
+		moveSelect = (randomMove <= 33) ? "rock":(randomMove >= 34 && randomMove <= 65) ? "paper": "scissors";
 		return moveSelect;
 	}
 
-	function game(){
-		
+	function round(computerSelection, playerSelection){
+		const computerSelection=computerPlay();
+		playerSelection = playerSelection.toLowerCase();
+		switch(true) {
+			case (computerSelection=="rock"):
+			    outcome = (playerSelection=="paper") ? "Paper covers Rock. Player wins!": (playerSelection=="scissors") ? "Rock smashes Scissors. Computer wins!" : "Tie game"
+			    break;
+			case (computerSelection=="paper"):
+			    outcome = (playerSelection=="rock") ? "Paper covers Rock. Computer wins!": (playerSelection=="scissors") ? "Scissors cut Paper. Player wins!" : "Tie game"
+			    break;
+			case (computerSelection=="scissors"):
+			    outcome = (playerSelection=="paper") ? "Scissors cut Paper. Computer wins!": (playerSelection=="rock") ? "Rock smashes Scissors. Player wins!" : "Tie game"
+			    break;
+			default:
+			   outcome = "An unknown error has occured."
+		}
 	}
 </script>
