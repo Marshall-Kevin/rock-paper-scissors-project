@@ -30,20 +30,23 @@
 	function game(userPrompt = ""){
 		computerWins = 0;
 		playerWins = 0;
-		while (computerWins < 5 || playerWins < 5):
+		while (computerWins < 5 || playerWins < 5){
 	        userPrompt = Window.prompt("Lets play Rock, Paper, Scissors. Input your move.")
 		    playRound(computerSelection, userPrompt)
 		    if (outcome.includes("Computer Win")){
 			    computerWins++
 			    if (computerWins=5){
 			    	return "Computer wins the game!"
+			    	break
 			    }
 		    }
 		    if (outcome.includes("Player Wins")){
 			    playerWins++
 			    if (playerWins=5){
 			    	return "Player wins the game!"
+			    	break
 			    }
 		}
-	}
+		}
+}
 </script>
